@@ -1,24 +1,27 @@
 <?php get_header(); ?>
-        <div id="content" class="site-content">
-            <div id="primary" class="content-area">
-                <main id="main" class="site-main">
-                    <div class="container">
-                        <div class="page-item">
-                            <?php while( have_posts() ): the_post(); ?>
+    
+    <img src="<?php header_image(); ?>" height="<?= get_custom_header()->height; ?>" width="<?= get_custom_header()->width; ?>" alt="">
 
-                                <article>
-                                    <header>
-                                        <h1>
-                                            <?php the_title(); ?>
-                                        </h1>
-                                    </header>
-                                    <?php the_content(); ?>
-                                </article>
+    <div id="content" class="site-content">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+                <div class="container">
+                    <div class="page-item">
+                        <?php while( have_posts() ): the_post(); ?>
 
-                            <?php endwhile; ?>
-                        </div>
+                            <article>
+                                <header>
+                                    <h1>
+                                        <?php the_title(); ?>
+                                    </h1>
+                                </header>
+                                <?php the_content(); ?>
+                            </article>
+
+                        <?php endwhile; ?>
                     </div>
-                </main>
-            </div>
+                </div>
+            </main>
         </div>
+    </div>
 <?php get_footer(); ?>
