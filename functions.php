@@ -23,6 +23,12 @@
         );
         add_theme_support( 'custom-header', $args );
         add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'custom-logo', array(
+            'width'      => 200,
+            'heigth'     => 110,
+            'flex-width'      => true,
+            'flex-height'     => true
+        ) );
 
     }
     add_action( 'after_setup_theme', 'wpdevs_config', 0 );
