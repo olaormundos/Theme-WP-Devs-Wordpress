@@ -32,6 +32,7 @@
                             <p>Nothing yet to be displayed!</p>
                         <?php endif; ?>
                     </div>
+                    <?= get_sidebar(); ?>
                 </div>
             </main>
         </div>
