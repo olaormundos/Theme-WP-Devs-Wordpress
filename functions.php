@@ -38,11 +38,11 @@
             array(
                 'name'            =>     'Blog Sidebar',
                 'id'              =>     'sidebar-blog',
-                'description'     =>    'This is the blog sidebar. You can add your widgets here.',
-                'before_widget'   =>   '<div class="widget-wrapper">',
-                'after_widget'    =>   '</div>',
-                'before_title'    =>   '<h4 class="widget-title">',
-                'after_title'     =>   '</h4>'
+                'description'     =>     'This is the blog sidebar. You can add your widgets here.',
+                'before_widget'   =>     '<div class="widget-wrapper">',
+                'after_widget'    =>     '</div>',
+                'before_title'    =>     '<h4 class="widget-title">',
+                'after_title'     =>     '</h4>'
             )
         );
     }
