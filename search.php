@@ -3,6 +3,7 @@
 <div id="primery">
     <div id="main">
         <div class="container">
+            <h1>Result search for: <?= get_search_query(); ?></h1>
             <?php
                 while( have_posts() ): the_post();
                     ?>
@@ -14,11 +15,13 @@
                                     </a>   
                                 </h2>
                             </header>
-                            <div class="meta-info">
-                                <p>Posted in <?= get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
-                                <p>Categories: <?php the_category( ' ' ); ?></p>
-                                <p>Tags: <?php the_tags( '', ', ' ); ?></p>
-                            </div>
+                            <?php if( 'post' == get_post_type() ): ?>
+                                <div class="meta-info">
+                                    <p>Posted in <?= get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
+                                    <p>Categories: <?php the_category( ' ' ); ?></p>
+                                    <p>Tags: <?php the_tags( '', ', ' ); ?></p>
+                                </div>
+                            <?php endif; ?>
                             <?php the_excerpt(); ?>
                         </article>
                     <?php
