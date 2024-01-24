@@ -18,7 +18,17 @@
                                 <p>Tags: <?php the_tags( '', ', ' ); ?></p>
                             </div>
                             <?php the_content(); ?>
+                            <?php wp_link_pages(); ?>
                         </article>
+
+                        <div class="wpdevs-pagination">
+                            <div class="pages next">
+                                <?php next_post_link( '&laquo; %link' ); ?>
+                            </div>
+                            <div class="pages previous">
+                                <?php previous_post_link( '%link &raquo' ); ?>
+                            </div>
+                        </div>
                     <?php
 
                     if( comments_open() || get_comments_number() ) {
