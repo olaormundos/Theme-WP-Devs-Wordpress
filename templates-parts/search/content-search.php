@@ -9,8 +9,12 @@
         <?php if( 'post' == get_post_type() ): ?>
             <div class="meta-info">
                 <p>Posted in <?= get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
-                <p>Categories: <?php the_category( ' ' ); ?></p>
-                <p>Tags: <?php the_tags( '', ', ' ); ?></p>
+                <?php if(has_category()): ?>
+                    <p>Categories: <?php the_category( ' ' ); ?></p>
+                <?php endif; ?>
+                <?php if(has_tag()): ?>    
+                    <p>Tags: <?php the_tags( '', ', ' ); ?></p>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
         <?php the_excerpt(); ?>

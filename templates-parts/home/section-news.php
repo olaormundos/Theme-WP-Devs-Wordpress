@@ -12,9 +12,11 @@
             while( $postlist->have_posts() ): $postlist->the_post();
             ?> 
                 <article class="latest-news">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail( 'large' ); ?>
-                    </a>    
+                    <?php if(has_post_thumbnail()): ?>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail( 'large' ); ?>
+                        </a>
+                    <?php endif; ?>        
                     <h3>
                         <a href="<?php the_permalink(); ?>">
                             <?php the_title(); ?> 
@@ -23,8 +25,12 @@
                     <p>
                         <div class="meta-info">
                             by <span><?php the_author_posts_link(); ?></span>
-                            Categories: <span><?php the_category( ' ' ); ?></span>
-                            Tags: <?php the_tags( '', ', ' ); ?>
+                            <?php if(has_category()): ?>
+                                Categories: <span><?php the_category( ' ' ); ?></span>
+                            <?php endif; ?>
+                            <?php if(has_tag()): ?>    
+                                Tags: <?php the_tags( '', ', ' ); ?>
+                            <?php endif; ?>    
                         </div>
                         <p>
                             <span>
