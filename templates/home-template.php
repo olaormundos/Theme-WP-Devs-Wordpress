@@ -10,7 +10,7 @@ Template Name: Home
                 <main id="main" class="site-main">
                     
                     <?php
-                        get_template_part( 'templates-parts/home/section-slider', ); 
+                        get_template_part( 'templates-parts/home/section-banner', ); 
                         get_template_part( 'templates-parts/home/section-services', );
                         get_template_part( 'templates-parts/home/section-news' );
                     ?>        
