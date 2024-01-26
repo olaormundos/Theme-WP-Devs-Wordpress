@@ -27,6 +27,128 @@
                 'type'         =>   'text'
             )
         );
+        // Hero section
+        $wp_customize->add_section(
+            'set_hero',
+            array(
+                'title'        =>  'Hero Section',
+                'description'  =>  'Hero Section Settings'
+            )
+        );
+        // Title Hero
+        $wp_customize->add_setting(
+            'set_hero_title',
+            array(
+                'type'               =>  'theme_mod',
+                'default'            =>  'Please, add some title',
+                'sanitaze_callback'  =>  'sanitaze_text_field'
+            )
+        );
+
+        $wp_customize->add_control(
+            'set_hero_title',
+            array(
+                'label'        =>   'Hero title',
+                'description'  =>   'Please, type your title here',
+                'section'      =>   'set_hero',
+                'type'         =>   'text'
+            )
+        );
+        // Subtitle Hero
+        $wp_customize->add_setting(
+            'set_hero_subtitle',
+            array(
+                'type'               =>  'theme_mod',
+                'default'            =>  'Please, add some subtitle',
+                'sanitaze_callback'  =>  'sanitaze_textarea_field'
+            )
+        );
+
+        $wp_customize->add_control(
+            'set_hero_subtitle',
+            array(
+                'label'        =>   'Hero Subtitle',
+                'description'  =>   'Please, type your subtitle here',
+                'section'      =>   'set_hero',
+                'type'         =>   'textarea'
+            )
+        );
+        // Button Hero text
+        $wp_customize->add_setting(
+            'set_hero_button_text',
+            array(
+                'type'               =>  'theme_mod',
+                'default'            =>  'Learn More',
+                'sanitaze_callback'  =>  'sanitaze_text_field'
+            )
+        );
+
+        $wp_customize->add_control(
+            'set_hero_button_text',
+            array(
+                'label'        =>   'Hero Text Button',
+                'description'  =>   'Please, type your hero button text here',
+                'section'      =>   'set_hero',
+                'type'         =>   'text'
+            )
+        );
+        // Button Hero link
+        $wp_customize->add_setting(
+            'set_hero_button_link',
+            array(
+                'type'               =>  'theme_mod',
+                'default'            =>  '#',
+                'sanitaze_callback'  =>  'esc_url_raw'
+            )
+        );
+
+        $wp_customize->add_control(
+            'set_hero_button_link',
+            array(
+                'label'        =>   'Hero Text Button',
+                'description'  =>   'Please, type your hero button link here',
+                'section'      =>   'set_hero',
+                'type'         =>   'url'
+            )
+        );
+        // Hero heigth
+        $wp_customize->add_setting(
+            'set_hero_height',
+            array(
+                'type'               =>  'theme_mod',
+                'default'            =>  800,
+                'sanitaze_callback'  =>  'absint'
+            )
+        );
+
+        $wp_customize->add_control(
+            'set_hero_height',
+            array(
+                'label'        =>   'Hero Heigth',
+                'description'  =>   'Please, type your here hero height here',
+                'section'      =>   'set_hero',
+                'type'         =>   'number'
+            )
+        );
+        // Hero background
+        $wp_customize->add_setting(
+            'set_hero_background',
+            array(
+                'type'               =>  'theme_mod',
+                'sanitaze_callback'  =>  'absint'
+            )
+        );
+        $wp_customize->add_control(
+            new WP_Customize_Media_Control(
+                $wp_customize,
+                'set_hero_background',
+                array(
+                    'label'              =>  'Hero image',
+                    'section'            =>  'set_hero',
+                    'mime_type'          =>  'image',
+                )
+            )
+        );
 
     }
     add_action( 'customize_register', 'wpdevs_customizer' );
