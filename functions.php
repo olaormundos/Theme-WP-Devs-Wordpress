@@ -19,6 +19,9 @@
             )
         );
 
+        $textdomain = 'wp-devs';
+        load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' );
+
         $args = array(
             'height'    => 225,
             'width'     => 1920
