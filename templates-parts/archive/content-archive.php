@@ -10,12 +10,12 @@
             </a>
         <?php endif; ?>        
         <div class="meta-info">
-            <p>Posted in <?= get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
+            <p><?php _e( 'Posted in', 'wp-devs' ); ?> <?= get_the_date(); ?> <?php _e( 'by', 'wp-devs' ); ?> <?php the_author_posts_link(); ?></p>
             <?php if(has_category()): ?>
-                <p>Categories: <?php the_category( ' ' ); ?></p>
+                <p><?php _e( 'Categories', 'wp-devs' ); ?>: <?php the_category( ' ' ); ?></p>
             <?php endif; ?>
             <?php if(has_tag()): ?>    
-                <p>Tags: <?php the_tags( '', ', ' ); ?></p>
+                <p><?php _e( 'Tags', 'wp-devs' ); ?>: <?php the_tags( '', ', ' ); ?></p>
             <?php endif; ?>
         </div>
         <?php the_excerpt(); ?>

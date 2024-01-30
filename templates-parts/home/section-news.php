@@ -1,5 +1,5 @@
 <section class="home-blog">
-    <h2>Latest News</h2>
+    <h2><?php _e( 'Latest News', 'wp-devs' ) ?></h2>
     <div class="container">
         <?php
 
@@ -29,12 +29,12 @@
                     </h3>
                     <p>
                         <div class="meta-info">
-                            by <span><?php the_author_posts_link(); ?></span>
+                            <?php _e( 'by', 'wp-devs' ) ?> <span><?php the_author_posts_link(); ?></span>
                             <?php if(has_category()): ?>
-                                Categories: <span><?php the_category( ' ' ); ?></span>
+                                <?php _e( 'Categories', 'wp-devs' ) ?>: <span><?php the_category( ' ' ); ?></span>
                             <?php endif; ?>
                             <?php if(has_tag()): ?>    
-                                Tags: <?php the_tags( '', ', ' ); ?>
+                                <?php _e( 'tags', 'wp-devs' ) ?>: <?php the_tags( '', ', ' ); ?>
                             <?php endif; ?>    
                         </div>
                         <p>
@@ -50,7 +50,7 @@
             endwhile;
             wp_reset_postdata();
         else: ?>
-            <p>Nothing yet to be displayed!</p>
+            <p><?php _e( 'Nothing yet to be displayed!', 'wp-devs' ) ?></p>
         <?php endif; ?>
     </div>
 </section>    
