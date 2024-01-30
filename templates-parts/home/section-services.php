@@ -1,5 +1,5 @@
     <section class="services">
-        <h2>Services</h2>
+        <h2><?php _e( 'Services', 'wp-devs' ) ?></h2>
         <div class="container">
             <div class="service-item">
                 <?php 
