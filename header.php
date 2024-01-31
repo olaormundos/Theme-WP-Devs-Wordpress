@@ -19,7 +19,7 @@
                                 the_custom_logo();
                             }else{
                                 ?>
-                                    <a href="<?= home_url( '/' ); ?>">
+                                    <a href="<?= esc_url( home_url( '/' ) ); ?>">
                                         <span>
                                             <?php bloginfo( 'name' ); ?>
                                         </span>
