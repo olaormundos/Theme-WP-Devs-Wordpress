@@ -18,7 +18,7 @@
                             endwhile;
                                 get_template_part( 'templates-parts/archive/paginacao-archive' );
                         else: ?>
-                            <p><?php _e( 'Nothing yet to be displayed!', 'wp-devs' ) ?></p>
+                            <p><?php esc_html_e( 'Nothing yet to be displayed!', 'wp-devs' ) ?></p>
                         <?php endif; ?>
                     </div>
                     <?= get_sidebar(); ?>

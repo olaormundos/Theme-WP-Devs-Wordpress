@@ -8,9 +8,9 @@
             $category_exclude = get_theme_mod( 'set_category_exclude' );
 
             $args = array(
-                'posts_per_page'   => $per_page,
-                'category__in'     => explode( ",", $category_include ),
-                'category__not_in' => explode( ",", $category_exclude )
+                'posts_per_page'   => esc_html( $per_page ),
+                'category__in'     => explode( ",", esc_html(  $category_include ) ),
+                'category__not_in' => explode( ",", esc_html(  $category_exclude ) )
             );
             $postlist = new WP_Query( $args );     
             if( $postlist->have_posts() ):
@@ -29,17 +29,17 @@
                     </h3>
                     <p>
                         <div class="meta-info">
-                            <?php _e( 'by', 'wp-devs' ) ?> <span><?php the_author_posts_link(); ?></span>
+                            <?php esc_html_e( 'by', 'wp-devs' ) ?> <span><?php the_author_posts_link(); ?></span>
                             <?php if(has_category()): ?>
-                                <?php _e( 'Categories', 'wp-devs' ) ?>: <span><?php the_category( ' ' ); ?></span>
+                                <?php esc_html_e( 'Categories', 'wp-devs' ) ?>: <span><?php the_category( ' ' ); ?></span>
                             <?php endif; ?>
                             <?php if(has_tag()): ?>    
-                                <?php _e( 'tags', 'wp-devs' ) ?>: <?php the_tags( '', ', ' ); ?>
+                                <?php esc_html_e( 'tags', 'wp-devs' ) ?>: <?php the_tags( '', ', ' ); ?>
                             <?php endif; ?>    
                         </div>
                         <p>
                             <span>
-                                <?= get_the_date(); ?>
+                                <?= esc_html( get_the_date() ); ?>
                             </span>
                         </p>
                     </p>
@@ -50,7 +50,7 @@
             endwhile;
             wp_reset_postdata();
         else: ?>
-            <p><?php _e( 'Nothing yet to be displayed!', 'wp-devs' ) ?></p>
+            <p><?php esc_html_e( 'Nothing yet to be displayed!', 'wp-devs' ) ?></p>
         <?php endif; ?>
     </div>
 </section>    

@@ -1,7 +1,7 @@
         <footer class="site-footer">
             <div class="container">
                 <div class="copyrigth">
-                    <p><?= get_theme_mod( 'set_copyright', 'Copyright xxxx - All Rights Reserved' ); ?></p>
+                    <p><?= esc_html( get_theme_mod( 'set_copyright', 'Copyright xxxx - All Rights Reserved' ) ); ?></p>
                 </div>
                 <div class="footer-menu">
                     <?php wp_nav_menu( 

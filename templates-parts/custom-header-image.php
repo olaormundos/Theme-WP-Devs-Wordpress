@@ -1,1 +1,1 @@
-    <img src="<?php header_image(); ?>" height="<?= get_custom_header()->height; ?>" width="<?= get_custom_header()->width; ?>" alt="">
+    <img src="<?php esc_url( header_image() ); ?>" height="<?= esc_attr( get_custom_header()->height ); ?>" width="<?= esc_attr( get_custom_header()->width ); ?>" alt="">
