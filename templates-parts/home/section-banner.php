@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="hero-items">
                     <h1><?= esc_html( $hero_title ) ?></h1>
-                    <p><?= nl2br esc_html( ($hero_subtitle) ) ?></p>
+                    <p><?= nl2br ( esc_html( $hero_subtitle ) ) ?></p>
                     <a href="<?= esc_url( $hero_button_link ) ?>"><?= esc_html( $hero_button_text ) ?></a>
                 </div>
             </div>
